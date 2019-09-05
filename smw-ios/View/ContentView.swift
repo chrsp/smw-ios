@@ -9,9 +9,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ObservedObject var viewModel = WordsListViewModel()
+    
     var body: some View {
-        Text("Hello World")
+        List(viewModel.words) { word in
+            VStack(alignment: .leading) {
+                Text(word.desc)
+                .lineLimit(nil)
+            }
+        }
     }
+    
 }
 
 #if DEBUG

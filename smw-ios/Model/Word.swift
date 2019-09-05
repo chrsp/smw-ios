@@ -8,7 +8,8 @@
 
 import Foundation
 
-struct Word: Codable {
+struct Word: Codable, Identifiable {
+    var id = UUID()
     var desc: String
     
     enum CodingKeys: String, CodingKey {
